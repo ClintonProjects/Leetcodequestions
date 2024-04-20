@@ -11,6 +11,7 @@ class Solution {
             r[counter++] = i;
        }
 
+        // In an object, it set default value, so in our array it set default value of 0
        for (int i = 0; i < nums.length; i++) 
              nums[i] = r[i];
        
