@@ -4,8 +4,8 @@ class Solution {
     int row = matrix.length;
     int col = matrix[0].length;
     int right = row * col - 1;
-    int middle;
-    int midVal;
+    int middle = 0;
+    int midVal = 0;
 
 		while (left <= right) {
             middle = left + (right - left) / 2;
