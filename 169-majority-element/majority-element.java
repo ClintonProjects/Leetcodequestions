@@ -6,9 +6,7 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             if (result == nums[i]) {
                 count++;
-            } 
-            
-            if (result != nums[i]) {
+            } else if (result != nums[i]) {
                 count--;
             }
 
