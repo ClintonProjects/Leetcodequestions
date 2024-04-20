@@ -1,12 +1,14 @@
 class Solution {
 
     public boolean containsDuplicate(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-
-        for (int i : nums) {
-            map.put(i, map.getOrDefault(i, 0) + 1);
-            if (map.get(i) > 1) return true;
-         }
+        //not my code
+        HashMap<Integer, Integer> seen = new HashMap<>();
+        for (int num : nums) {
+            if (seen.containsKey(num) && seen.get(num) >= 1)
+                return true;
+            seen.put(num, seen.getOrDefault(num, 0) + 1);
+        }
+        return false;
 
 
         //good memory slow run time
@@ -25,6 +27,5 @@ class Solution {
         // for (int i : nums) 
         // if (!hs.add(i)) return true;
         
-        return false;
     }
 }
