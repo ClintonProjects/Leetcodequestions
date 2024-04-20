@@ -4,8 +4,8 @@ class Solution {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         for (int i : nums) {
-            if (map.containsKey(i)) return true;
-            map.put(i, i);
+            map.put(i, map.getOrDefault(i, 0) + 1);
+            if (map.get(i) > 1) return true;
          }
 
 
