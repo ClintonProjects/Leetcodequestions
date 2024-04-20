@@ -4,10 +4,12 @@ class Solution {
     int row = matrix.length;
     int col = matrix[0].length;
     int right = row * col - 1;
+    int middle;
+    int midVal;
 
 		while (left <= right) {
-            int middle = left + (right - left) / 2;
-            int midVal = matrix[middle / col][middle % col];
+            middle = left + (right - left) / 2;
+            midVal = matrix[middle / col][middle % col];
 
 			if (midVal < target) {
 				left = middle + 1;
