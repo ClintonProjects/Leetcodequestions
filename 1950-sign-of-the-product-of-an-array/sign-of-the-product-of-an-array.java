@@ -2,16 +2,15 @@ import java.math.BigInteger;
 
 class Solution {
     public int arraySign(int[] nums) {
-        BigInteger bd = new BigInteger("1");
-        for (int i : nums) 
-            bd = bd.multiply(new BigInteger(String.valueOf(i)));
-
-        if (bd.compareTo(BigInteger.ZERO) > 0) {
-            return 1;
-        } else if (bd.compareTo(BigInteger.ZERO) == 0) {
-            return 0;
-        } else {
-            return -1;
+        int cur = 1;
+        for (int i : nums) {
+            if (i == 0) 
+                return 0;
+    
+            if (i < 0)
+                cur = -cur;
         }
+
+        return cur;
     }
 }
