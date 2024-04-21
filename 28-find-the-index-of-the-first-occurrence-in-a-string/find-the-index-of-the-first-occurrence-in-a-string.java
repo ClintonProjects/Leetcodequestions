@@ -4,10 +4,7 @@ class Solution {
             return -1;
         }
 
-        int start;
-        int end;
-        start = 0;
-        end = needle.length()-1;
+        int start = 0, end = needle.length()-1;
         String s;
 
         while(end < haystack.length()) {
