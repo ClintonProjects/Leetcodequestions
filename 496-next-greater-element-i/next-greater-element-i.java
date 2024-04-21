@@ -3,9 +3,9 @@ class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         int[] r = new int[nums1.length];
         int counter = 0;
+        boolean check = false;
     
         for (int i = 0; i < nums1.length; i++) {
-            boolean check = false;
             r[i] = -1;
             for (int j = 0; j < nums2.length; j++) {
                 if (!check && nums1[i] == nums2[j]) check = true;
