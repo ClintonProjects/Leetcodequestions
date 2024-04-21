@@ -4,13 +4,15 @@ class Solution {
         String str[] = s.split(" ");
 
         if (str.length != pattern.length()) return false;
-        
+
         Map<String, Character> map1 = new HashMap<>();
         Map<Character, String> map2 = new HashMap<>();
+        char c;
+        String st;
 
         for (int i = 0; i < str.length; i++) {
-            char c = pattern.charAt(i);
-            String st = str[i];
+            c = pattern.charAt(i);
+            st = str[i];
 
             if (map1.containsKey(st) && map1.get(st) != c) return false;
 
