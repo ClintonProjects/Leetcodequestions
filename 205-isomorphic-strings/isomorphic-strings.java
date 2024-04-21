@@ -10,12 +10,16 @@ class Solution {
 
         for(int i=0;i<s.length();i++)
         {
-            if(map1[s.charAt(i)]!=map2[t.charAt(i)])
-                return false;
+            char c = s.charAt(i);
+            char c2 = t.charAt(i);
 
-            map1[s.charAt(i)]=i+1;
-            map2[t.charAt(i)]=i+1;
+            if (map1[c] !=  map2[c2])
+            return false;
+
+            map1[c ] = i+1;
+            map2[c2 ] = i+1;
         }
+        
         return true;
     }
 
