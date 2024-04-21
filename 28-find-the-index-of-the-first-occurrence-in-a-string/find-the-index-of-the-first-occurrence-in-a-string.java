@@ -1,12 +1,15 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        if (haystack == null || needle.length() > haystack.length())
+        int N = haystack.length();
+        int M = needle.length();
+
+        if (haystack == null || M > N)
             return -1;
 
-        int start = 0, end = needle.length()-1;
+        int start = 0, end = M-1;
         String s;
 
-        while(end < haystack.length()) {
+        while(end < N) {
              s = haystack.substring(start, end + 1);
               if (s.equals(needle))
               return start;
