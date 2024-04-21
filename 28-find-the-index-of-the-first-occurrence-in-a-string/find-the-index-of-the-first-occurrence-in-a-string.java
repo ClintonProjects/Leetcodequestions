@@ -6,7 +6,7 @@ class Solution {
         if (haystack == null || M > N)
             return -1;
 
-        int start = 0, end = M-1;
+        int start = 0, end = needle.length()-1;
         String s;
 
         while(end < N) {
