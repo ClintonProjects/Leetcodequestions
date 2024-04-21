@@ -11,7 +11,7 @@ class Solution {
         String s;
 
         while(end < haystack.length()) {
-            s = haystack.substring(start, end + 1);
+             s = haystack.substring(start, end + 1);
               if (s.equals(needle))
               return start;
               start++;
