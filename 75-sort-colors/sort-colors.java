@@ -1,7 +1,8 @@
 class Solution {
     public void sortColors(int[] nums) {
-        Arrays.sort(nums);
         
+        //second sort of fun, one.thinking porority queue or something like that
+        Arrays.sort(nums);
         //bubble sort first, I knew this be too slow, just did to make sure I understood the question.
         // int temp;
         // for (int i = 0; i < nums.length; i++) {
