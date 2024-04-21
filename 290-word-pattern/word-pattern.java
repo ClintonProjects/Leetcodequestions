@@ -3,9 +3,6 @@ class Solution {
     public boolean wordPattern(String pattern, String s) {
         String str[] = s.split(" ");
 
-
-        System.out.println(str[str.length - 1]);
-
         if (str.length != pattern.length()) return false;
 
         // int[] map1 = new int[256];
@@ -16,8 +13,6 @@ class Solution {
         for (int i = 0; i < str.length; i++) {
             char c = pattern.charAt(i);
             String st = str[i];
-            System.out.println(c + " " + st + " " + map2.get(c));
-            System.out.println(map2.containsKey(c) && map2.get(c) != st);
 
             if (map1.containsKey(st) && map1.get(st) != c) return false;
 
