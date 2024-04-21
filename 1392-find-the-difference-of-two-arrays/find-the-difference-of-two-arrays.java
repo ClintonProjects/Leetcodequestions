@@ -24,12 +24,10 @@ public class Solution {
             if (!hs.contains(i)) l2.add(i);
         }
 
-        //trying to improve the space complexity
-        List<List<Integer>> result = new ArrayList<>();
-        result.add(l1);
-        result.add(l2);
+        List<List<Integer>> n = new ArrayList<List<Integer>>();
+        n.add(l1);
+        n.add(l2);
 
-
-        return result;
+        return n;
     }
 }
