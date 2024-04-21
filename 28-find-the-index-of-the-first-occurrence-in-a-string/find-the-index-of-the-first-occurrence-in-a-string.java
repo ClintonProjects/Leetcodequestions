@@ -1,8 +1,7 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        if (haystack == null || needle.length() > haystack.length()){
+        if (haystack == null || needle.length() > haystack.length())
             return -1;
-        }
 
         int start = 0, end = needle.length()-1;
         String s;
@@ -15,7 +14,6 @@ class Solution {
               end++;
         }
 
-  
         return -1;
     }
 }
