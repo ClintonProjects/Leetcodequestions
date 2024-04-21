@@ -11,18 +11,17 @@ public class Solution {
 
         int N = Math.max(nums1.length, nums2.length);
 
-        for (int i = 0; i < N; i++) {
-            if (i < nums1.length) hs.add(nums1[i]);
-            if (i < nums2.length) hs2.add(nums2[i]);
-        }
+        for (int i : nums1) hs.add(i);
 
-        for (int i : hs) {
+        for (int i : nums2)  hs2.add(i);
+
+        for (int i : hs) 
             if (!hs2.contains(i)) l1.add(i);
-        }
+        
 
-        for (int i : hs2) {
+        for (int i : hs2) 
             if (!hs.contains(i)) l2.add(i);
-        }
+        
 
         List<List<Integer>> n = new ArrayList<List<Integer>>();
         n.add(l1);
