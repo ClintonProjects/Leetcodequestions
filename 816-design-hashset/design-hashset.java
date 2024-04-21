@@ -3,22 +3,23 @@ import java.util.stream.Collectors;
 
 class MyHashSet {
     
-    List<Integer> ls;
+    boolean [] arr;
+    
     
     public MyHashSet() {
-         ls = new ArrayList<>();
+        arr=new boolean[(int)1e6+1];
     }
     
     public void add(int key) {
-        ls.add(key);
+        arr[key] = true;
     }
     
     public void remove(int key) {
-        ls = ls.stream().filter(i -> i != key).collect(Collectors.toList());
+       arr[key] = false;
     }
     
     public boolean contains(int key) {
-        return ls.contains(key);
+        return arr[key];
     }
 }
 
