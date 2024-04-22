@@ -5,12 +5,12 @@ class Solution {
         int end = 0;
         int max = 0;
         int e = 0;
-        
+        int i;
+        int j;
 
         while (end < fruits.length && start < fruits.length ) {
-            int i = fruits[start];
-            int j = fruits[end];
-            int amount = 0;
+             i = fruits[start];
+             j = fruits[end];
 
             map.put(j,map.getOrDefault(j,0)+1);
 
