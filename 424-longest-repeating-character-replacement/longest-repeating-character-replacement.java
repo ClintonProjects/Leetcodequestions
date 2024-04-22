@@ -17,28 +17,9 @@ class Solution {
                     cArr[s.charAt(l) - 'A']--;
                     l++;
                 }
-                // Arrays.fill(cArr, 0);
-                // l++;
-                // cArr[s.charAt(l) - 'A']++;
-                // r = l;
             }
 
             r++;
-            // r++;
-            // char c = s.charAt(r);
-            // cArr[c - 'A']++;
-            // highest = Math.max(highest, cArr[s.charAt(j) - 'A']);
-
-            // count = (r - l) + 1 - highest;
-
-            // if (count == k) {
-            // 	l++;
-            // 	char cL = s.charAt(l);
-            // 	cArr[cL - 'A']--;
-            // }
-
-            // count = Math.max(count, r - l + 1);
-
         }
 
         return highest;
