@@ -15,7 +15,6 @@ import java.util.Queue;
 class Solution {
 
     public boolean isPalindrome(ListNode head) {
-        // if (head == null) return null;
         ListNode slow = head;
         ListNode fast = head;
         ListNode l = null;
@@ -27,6 +26,7 @@ class Solution {
             head = head.next;
         }
 
+        //checker.
         while (fast != null && fast.next != null) {
             if (slow.val != l.val) return false;
             l = l.next;
