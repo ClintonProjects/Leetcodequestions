@@ -17,19 +17,18 @@ class Solution {
     public boolean isPalindrome(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
-        ListNode l = null;
-        ListNode h = head;
+        ListNode reverse = null;
 
         //reverse.
         while (head != null) {
-            l = new ListNode(head.val, l);
+            reverse = new ListNode(head.val, reverse);
             head = head.next;
         }
 
         //checker.
         while (fast != null && fast.next != null) {
-            if (slow.val != l.val) return false;
-            l = l.next;
+            if (slow.val != reverse.val) return false;
+            reverse = reverse.next;
             slow = slow.next;
             fast = fast.next.next;
         }
