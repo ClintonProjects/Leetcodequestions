@@ -1,5 +1,7 @@
 class Solution {
     public long zeroFilledSubarray(int[] nums) {
+        //This actually took me less then 30 seconds , O.O
+        
         long counter = 0;
         long max = 0; 
 
