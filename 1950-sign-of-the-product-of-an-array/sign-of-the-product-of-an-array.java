@@ -1,5 +1,3 @@
-import java.math.BigInteger;
-
 class Solution {
 
     public int arraySign(int[] nums) {
