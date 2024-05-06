@@ -21,15 +21,12 @@ class Solution {
             n = n.next;
         }
 
-
+        Collections.sort(ls);
         ListNode r = new ListNode(0);
         n = r;
 
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        pq.addAll(ls);
-
-         while (!pq.isEmpty()) {
-            r.next = new ListNode(pq.poll());
+        for (int i : ls) {
+            r.next = new ListNode(i);
             r = r.next;
         }
 
