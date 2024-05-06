@@ -20,14 +20,14 @@ class Solution {
             k--;
         }
 
+        if (st.isEmpty()) return "0";
+
         StringBuilder sb = new StringBuilder();
 
         while (!st.isEmpty()) 
             sb.append(st.pop());
         
         String r = sb.reverse().toString();
-       
-        if (r.isEmpty()) r = "0";
 
         return r;
     }
