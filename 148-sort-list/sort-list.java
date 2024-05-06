@@ -14,8 +14,7 @@ class Solution {
             return null;
 
         ListNode n = head;
-        //just rnning this out curiousity
-        LinkedList<Integer> ls = new LinkedList<Integer>();
+        ArrayList<Integer> ls = new ArrayList<Integer>();
 
         while (n != null) {
             ls.add(n.val);
