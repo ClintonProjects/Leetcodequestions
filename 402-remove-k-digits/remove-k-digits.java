@@ -27,8 +27,8 @@ class Solution {
         while (!st.isEmpty()) 
             sb.append(st.pop());
         
-        String r = sb.reverse().toString();
+        sb.reverse();
 
-        return r;
+        return sb.toString();
     }
 }
