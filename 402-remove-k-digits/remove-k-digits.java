@@ -12,7 +12,7 @@ class Solution {
                 k--;
             }
 
-            if (!(st.isEmpty() && i == 0)) st.push(c);
+            if (!st.isEmpty() || i != 0) st.push(c);
         }
 
         while (k > 0 && !st.isEmpty()) {
