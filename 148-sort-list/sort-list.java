@@ -14,18 +14,21 @@ class Solution {
             return null;
 
         ListNode n = head;
-
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        ArrayList<Integer> ls = new ArrayList<Integer>();
 
         while (n != null) {
-            pq.add(n.val);
+            ls.add(n.val);
             n = n.next;
         }
+
 
         ListNode r = new ListNode(0);
         n = r;
 
-        while (!pq.isEmpty()) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.addAll(ls);
+
+         while (!pq.isEmpty()) {
             r.next = new ListNode(pq.poll());
             r = r.next;
         }
