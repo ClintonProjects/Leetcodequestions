@@ -24,8 +24,7 @@ class Solution {
 
         StringBuilder sb = new StringBuilder();
 
-        while (!st.isEmpty()) 
-            sb.append(st.pop());
+        while (!st.isEmpty()) sb.append(st.pop());
         
         sb.reverse();
 
