@@ -13,10 +13,9 @@ class Solution {
         if (head == null)
             return null;
 
-        //System.out.println("pog");
-
         ListNode n = head;
-        ArrayList<Integer> ls = new ArrayList<Integer>();
+        //just rnning this out curiousity
+        LinkedList<Integer> ls = new LinkedList<Integer>();
 
         while (n != null) {
             ls.add(n.val);
