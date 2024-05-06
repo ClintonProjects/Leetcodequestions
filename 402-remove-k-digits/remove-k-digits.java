@@ -23,7 +23,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
 
         while (!st.isEmpty()) 
-            sb.append(String.valueOf(st.pop()));
+            sb.append(st.pop());
         
         String r = sb.reverse().toString();
        
