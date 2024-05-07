@@ -1,21 +1,22 @@
 class Solution {
+
     public int arrangeCoins(int n) {
-        int blocks = 1;
+        return recursion(n, 1);
+        // int blocks = 1;
 
-        while (0 < n) {
-            n -= blocks;
-            if (n - blocks > 0)
-            blocks += 1;
-        }
+        // while (0 < n) {
+        // n -= blocks;
+        // if (n - blocks > 0)
+        // blocks += 1;
+        // }
 
-
-        return blocks;
+        // return blocks;
     }
 
-    public int recursion(int current, int total, int ill) {
-        if (total < 0)
-         return ill;
-        else
-         return recursion(current+1, total - current, ill + 1);
-    }   
+    public int recursion(int n, int blocks) {
+        if (n <= 0) return blocks;
+        n -= blocks;
+        if (n - blocks > 0) blocks += 1;
+        return recursion(n, blocks);
+    }
 }
