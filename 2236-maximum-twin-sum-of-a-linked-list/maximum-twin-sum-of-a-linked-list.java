@@ -28,10 +28,8 @@ class Solution {
 
         while (head != null) {
             twin = n - 1 - counter - 1;
-            if (map.containsKey(twin)) {
-                if ((0 <= counter) && (counter <= (n / 2) - 1)) {
-                    result = Math.max(result, map.get(twin) + head.val);
-                }
+            if (map.containsKey(twin) && (0 <= counter) && (counter <= (n / 2) - 1)) {
+                result = Math.max(result, map.get(twin) + head.val);
             }
             counter++;
             head = head.next;
