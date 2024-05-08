@@ -21,17 +21,17 @@ class Solution {
         return new int[] { start, end};
     }
 
-    public int findRange(int[] arr, int target, int currentIndex, int way) {
-        while (currentIndex < arr.length && currentIndex >= 0) {
-            if (target != arr[currentIndex]) {
-                return currentIndex + (way * -1);
-            } else {
-                currentIndex += way;
-            }
-        }
+    // public int findRange(int[] arr, int target, int currentIndex, int way) {
+    //     while (currentIndex < arr.length && currentIndex >= 0) {
+    //         if (target != arr[currentIndex]) {
+    //             return currentIndex + (way * -1);
+    //         } else {
+    //             currentIndex += way;
+    //         }
+    //     }
 
-        System.out.println(currentIndex);
-        // error
-        return currentIndex;
-    }
+    //     System.out.println(currentIndex);
+    //     // error
+    //     return currentIndex;
+    // }
 }
