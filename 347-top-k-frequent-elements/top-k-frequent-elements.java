@@ -15,8 +15,7 @@ class Solution {
         }
 
         for (int i = 0; i < k; i++) {
-            Map.Entry<Integer, Integer> entry = pq.poll();
-            r[i] = entry.getKey();
+            r[i] = pq.poll().getKey();
         }
 
         return r;
