@@ -5,16 +5,23 @@ import java.util.Collections;
 class Solution {
 
     public String kthLargestNumber(String[] nums, int k) {
-        if (nums.length < k)
-            return null;
+        if (nums.length < k) return null;
 
-        BigInteger[] r = new BigInteger[nums.length];
+        PriorityQueue<String> heap = new PriorityQueue<>(
+            (a, b) -> {
+                if (a.length() == b.length()) 
+                return a.compareTo(b); 
+                else 
+                return Integer.compare(a.length(), b.length());
+            }
+        );
 
-        for (int i = 0; i < nums.length; i++)
-            r[i] = new BigInteger(nums[i]);
-
-        Arrays.sort(r, Collections.reverseOrder());
-
-        return String.valueOf(r[k - 1]);
+        for (String i : nums) {
+            heap.offer(i);
+            if (heap.size() > k)
+            heap.poll();
+        }
+        
+        return heap.poll();
     }
 }
