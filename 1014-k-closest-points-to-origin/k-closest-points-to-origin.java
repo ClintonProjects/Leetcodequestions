@@ -4,7 +4,7 @@ class Solution {
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> (b[0] * b[0] + b[1] * b[1]) - (a[0] * a[0] + a[1] * a[1]));
 
         for (int[] i : points) {
-            pq.offer(i);
+            pq.add(i);
             if (pq.size() > k) pq.poll();
         }
 
