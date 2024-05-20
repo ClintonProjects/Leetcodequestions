@@ -4,16 +4,13 @@ class Solution {
         int right = nums.length - 1;
         int resultArray = nums.length - 1;
         int[] result = new int[nums.length];
-        int ls = 0;
-        int rs = 0;
+        
         while (left <= right) {
-            ls = Math.abs(nums[left] * nums[left]) ;
-            rs =  Math.abs(nums[right] * nums[right]);
-            if (ls < rs) {
-                result[resultArray--] = rs; 
+            if (Math.abs(nums[left] * nums[left]) <  Math.abs(nums[right] * nums[right])) {
+                result[resultArray--] =  Math.abs(nums[right] * nums[right]); 
                 right--;
             } else {
-                result[resultArray--] = ls; 
+                result[resultArray--] = Math.abs(nums[left] * nums[left]); 
                 left++;
             }
         }
