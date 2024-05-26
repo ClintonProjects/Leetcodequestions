@@ -7,25 +7,24 @@ class Solution {
         StringBuilder result = new StringBuilder();
         int current = 0;
         boolean carry = false;
+        int a = 0 , b = 0;
 
         while (l >= 0 || r >= 0 || carry) {
-            if (l >= 0) {
-                current += num1.charAt(l) - '0';
-                l--;
-            }
+            a = 0; 
+            b = 0;
 
-            if (r >= 0) {
-                current += num2.charAt(r) - '0';
-                r--;
-            }
+            if (l >= 0) a = num1.charAt(l) - '0';
+            if (r >= 0) b = num2.charAt(r) - '0';
+            
 
-            current = carry ? current + 1 : current;
+            current = carry ? a + b + 1 : a + b;
             carry = false;
 
             carry = current >= 10;
-
             result.append(current % 10);
             current = 0;
+            l--;
+            r--;
         }
 
         return result.reverse().toString();
