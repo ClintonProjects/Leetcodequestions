@@ -2,9 +2,9 @@ class Solution {
 
     public int thirdMax(int[] nums) {
         Arrays.sort(nums);
-        if (nums.length <= 2) {
-            return nums[nums.length - 1];
-        }
+        // if (nums.length <= 2) {
+        //     return nums[nums.length - 1];
+        // }
 
         int counter = 1;
         int index = nums.length - 2;
@@ -14,10 +14,6 @@ class Solution {
             index--;
         }
 
-        if (counter != 3) {
-            return nums[ nums.length - 1];
-        }
-
-        return nums[index+1];
+        return counter == 3 ? nums[index+1] : nums[ nums.length - 1];
     }
 }
