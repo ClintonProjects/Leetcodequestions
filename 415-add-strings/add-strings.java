@@ -19,20 +19,15 @@ class Solution {
                 r--;
             }
 
-            if (carry) {
-                current = current + 1;
-                carry = false;
-            }
+            current = carry ? current + 1 : current;
+            carry = false;
 
-            if (current >= 10) {
-                current -= 10;
-                carry = true;
-            }
+            carry = current >= 10;
 
-            result.insert(0, current);
+            result.append(current % 10);
             current = 0;
         }
 
-        return result.toString();
+        return result.reverse().toString();
     }
 }
