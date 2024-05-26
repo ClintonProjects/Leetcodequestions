@@ -4,7 +4,7 @@ class Solution {
 
     public String addStrings(String num1, String num2) {
         int l = num1.length() - 1, r = num2.length() - 1;
-        String result = "";
+        StringBuilder result = new StringBuilder();
         int current = 0;
         boolean carry = false;
 
@@ -29,10 +29,10 @@ class Solution {
                 carry = true;
             }
 
-            result = String.valueOf(current) + result;
+            result.insert(0, current);
             current = 0;
         }
 
-        return result;
+        return result.toString();
     }
 }
