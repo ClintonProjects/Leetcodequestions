@@ -10,17 +10,14 @@ class Solution {
 
         while (l >= 0 || r >= 0 || carry) {
             if (l >= 0) {
-                 System.out.println("left " + (num1.charAt(l) - '0'));
                 current += num1.charAt(l) - '0';
                 l--;
             }
 
             if (r >= 0) {
-                System.out.println("right " + (num2.charAt(r) - '0'));
                 current += num2.charAt(r) - '0';
                 r--;
             }
-
 
             if (carry) {
                 current = current + 1;
