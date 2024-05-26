@@ -10,8 +10,12 @@ class Solution {
             if (i < magazine.length()) ranArray[magazine.charAt(i) - 'a']--;
         }
 
-        Arrays.sort(ranArray);
-        if (ranArray[25] > 0) return false;
+        for (int i : ranArray) {
+            if (i > 0) return false;
+        }
+
+        // Arrays.sort(ranArray);
+        // if (ranArray[25] > 0) return false;
 
         return true;
     }
