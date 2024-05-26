@@ -3,7 +3,6 @@ class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
         int[] ranArray = new int[255];
         
-
         for (int i = 0; i < Math.max(ransomNote.length(), magazine.length()); i++) {
             if (i < ransomNote.length())
             ranArray[ransomNote.charAt(i) - 'a']++;
@@ -11,10 +10,15 @@ class Solution {
             ranArray[magazine.charAt(i) - 'a']--;
         }
 
-        for (int i : ranArray) {
-            if (i > 0)
-            return false;
-        }
+        Arrays.sort(ranArray);
+
+        if (ranArray[254] > 0)
+        return false;
+
+        // for (int i : ranArray) {
+        //     if (i > 0)
+        //     return false;
+        // }
 
         return true;
     }
