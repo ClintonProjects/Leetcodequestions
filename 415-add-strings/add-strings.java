@@ -13,18 +13,14 @@ class Solution {
             a = 0; 
             b = 0;
 
-            if (l >= 0) a = num1.charAt(l) - '0';
-            if (r >= 0) b = num2.charAt(r) - '0';
+            if (l >= 0) a = num1.charAt(l--) - '0';
+            if (r >= 0) b = num2.charAt(r--) - '0';
             
-
             current = carry ? a + b + 1 : a + b;
-            carry = false;
-
             carry = current >= 10;
+            
             result.append(current % 10);
             current = 0;
-            l--;
-            r--;
         }
 
         return result.reverse().toString();
