@@ -1,6 +1,5 @@
 class Solution {
     public String firstPalindrome(String[] words) {
-        String palindrome = "";
         int l, r;
 
         for (String s : words) {
