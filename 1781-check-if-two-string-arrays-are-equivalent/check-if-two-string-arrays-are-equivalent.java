@@ -19,8 +19,6 @@ class Solution {
             } else {
                 j++;
             }
-
-            if (arrayIndexL == word1.length || arrayIndexR == word2.length) break;
         }
 
         return arrayIndexL == word1.length && arrayIndexR == word2.length;
