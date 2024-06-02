@@ -1,24 +1,27 @@
 class Solution {
+
     public int[] sortArrayByParity(int[] nums) {
-        //I am aware two pointers would be faster, but just this way for fun.
+        int l = 0, r = nums.length - 1;
 
-        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(
-            (a,b) -> (a % 2) - (b % 2)
-        );
+        while (l < r) {
+            int rNum = nums[r];
+            int lNum = nums[l];
+            int temp = rNum;
 
-        for (int i : nums) {
-            pq.add(i);
+            if (rNum % 2 == 0 && lNum % 2 == 1) {
+                nums[r] = lNum;
+                nums[l] = rNum;
+                l++;
+                r--;
+            }
+
+            if (nums[r] % 2 == 1) 
+                r--;
+
+            if (nums[l] % 2 == 0) 
+                l++;
         }
 
-        int[] n = new int[nums.length];
-
-        int counter = 0;
-
-        while(!pq.isEmpty()) {
-            n[counter++] = pq.poll();
-        }
-
-        return n;
-
+        return nums;
     }
- }
+}
