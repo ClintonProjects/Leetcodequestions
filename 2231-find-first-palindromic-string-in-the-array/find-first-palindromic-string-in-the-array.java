@@ -11,8 +11,7 @@ class Solution {
             r = s.length() - 1;
             
             while(l <= r) {
-                c1 = s.charAt(l);
-                c2 = s.charAt(r);
+                c1 = s.charAt(l); c2 = s.charAt(r);
                 if (c1 != c2)
                 break;
                 l++;
