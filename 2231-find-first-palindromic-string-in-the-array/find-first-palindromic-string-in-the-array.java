@@ -1,16 +1,18 @@
 class Solution {
     public String firstPalindrome(String[] words) {
+        //lowering space complexity before I work run time
+
         String palindrome = "";
-        char[] cArray = new char[25];
         int l, r;
+        char c1, c2;
 
         for (String s : words) {
             l = 0;
             r = s.length() - 1;
             
             while(l <= r) {
-                char c1 = s.charAt(l);
-                char c2 = s.charAt(r);
+                c1 = s.charAt(l);
+                c2 = s.charAt(r);
                 if (c1 != c2)
                 break;
                 l++;
