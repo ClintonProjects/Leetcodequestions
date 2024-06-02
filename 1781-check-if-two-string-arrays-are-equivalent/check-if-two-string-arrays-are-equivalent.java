@@ -1,29 +1,32 @@
 class Solution {
+
     public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        //this will be slow just making sure I understand the question
+        int arrayIndexL = 0, arrayIndexR = 0;
+        int i = 0, j = 0;
+        char c, c2;
 
-        String s = "";
-        String s2 = "";
+        while (arrayIndexL < word1.length) {
+            if (i == word1[arrayIndexL].length()) {
+                arrayIndexL += 1;
+                i = 0;
+            }
 
-        for (String s3 : word1) {
-            s += s3;
+            if (j == word2[arrayIndexR].length()) {
+                arrayIndexR += 1;
+                j = 0;
+            }
+
+            if (arrayIndexL == word1.length || arrayIndexR == word2.length) break;
+
+            c = word1[arrayIndexL].charAt(i);
+            c2 = word2[arrayIndexR].charAt(j);
+
+            if (c != c2) return false;
+
+            i++;
+            j++;
         }
 
-        for (String s3 : word2) {
-            s2 += s3;
-        }
-
-        if (s.length() != s2.length()) 
-        return false;
-
-        int i = 0,  j = 0;
-        
-        while(i < s.length() && j < s2.length()) {
-            if (s.charAt(i++) != s2.charAt(j++))
-            return false;
-        }
-        
-
-        return true;
+        return arrayIndexL == word1.length && arrayIndexR == word2.length;
     }
 }
