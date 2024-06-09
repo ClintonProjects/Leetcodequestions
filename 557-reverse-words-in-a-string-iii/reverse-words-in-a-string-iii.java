@@ -1,23 +1,31 @@
 class Solution {
 
     public String reverseWords(String s) {
-        String[] split = s.split(" ");
-        String v = "";
-        String r = "";
+        int l = 0;
+        int r = s.length() - 1;
+        char[] array = s.toCharArray();
+        char t = 'a';
 
-        for (int i = 0; i < split.length; i++) {
-            for (int j = split[i].length() - 1; j >= 0; j--) {
-                v += split[i].charAt(j);
-            }
-            split[i] = v;
-            v = "";
-
-            if (i < split.length - 1)
-            r += split[i] + " ";
-            else 
-            r += split[i];
+        while (l < r) {
+            t = array[l];
+            array[l] = array[r];
+            array[r] = t;
+            l++;
+            r--;
         }
 
-        return r;
+        String[] sR = String.copyValueOf(array).split(" ");
+
+        String returnS = "";
+        for (int i = sR.length - 1; i >= 0; i--) {
+            if (i != 0)
+            returnS += sR[i] + " "; 
+            else 
+            returnS += sR[i]; 
+        }
+
+        //this is going to be very slow and bad space complexity
+
+        return returnS;
     }
 }
