@@ -14,7 +14,6 @@
  * }
  */
 class Solution {
-
     private int sum;
 
     public int rangeSumBST(TreeNode root, int low, int high) {
@@ -26,16 +25,10 @@ class Solution {
     public void helper(TreeNode node, int a, int b) {
         if (node == null) return;
 
-        if (node.val >= a && node.val <= b) {
+        if (node.val >= a && node.val <= b)
             sum += node.val;
-        }
-
-        if (node.left != null) {
-            helper(node.left, a, b);
-        }
-
-        if (node.right != null) {
-            helper(node.right, a, b);
-        }
+        
+        helper(node.left, a, b);
+        helper(node.right, a, b);
     }
 }
