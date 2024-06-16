@@ -15,13 +15,13 @@
  */
 class Solution {
 
+    private int sum;
+
     public int rangeSumBST(TreeNode root, int low, int high) {
-        //I'll try soultion with less space usage after.
+        sum = 0;
         helper(root, low, high);
         return sum;
     }
-
-    private int sum = 0;
 
     public void helper(TreeNode node, int a, int b) {
         if (node == null) return;
@@ -31,11 +31,11 @@ class Solution {
         }
 
         if (node.left != null) {
-            helper(node.left,a,b);
+            helper(node.left, a, b);
         }
 
         if (node.right != null) {
-            helper(node.right,a,b);
+            helper(node.right, a, b);
         }
     }
 }
