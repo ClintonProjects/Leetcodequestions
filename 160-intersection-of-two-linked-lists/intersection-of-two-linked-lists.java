@@ -18,15 +18,20 @@ public class Solution {
         ListNode n2 = headB;
 
         Set<ListNode> hs = new HashSet<>();
+        Set<ListNode> hs2 = new HashSet<>();
 
-        while (headA != null) {
-            hs.add(headA);
-            headA = headA.next;
-        }
+        while (headA != null || headB != null) {
+            if (headA != null) {
+                hs.add(headA);
+                if (hs2.contains(headA)) return headA;
+                headA = headA.next;
+            }
 
-        while (headB != null) {
-            if (hs.contains(headB)) return headB;
-            headB = headB.next;
+            if (headB != null) {
+                hs2.add(headB);
+                if (hs.contains(headB)) return headB;
+                headB = headB.next;
+            }
         }
 
         return null;
