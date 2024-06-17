@@ -17,14 +17,13 @@ class Solution {
 
     public boolean isBalanced(TreeNode root) {
         if (root == null) return true;
-        int l = count(root.left, 1);
-        int r =  count(root.right, 1);
+        int l = count(root.left);
+        int r =  count(root.right);
         return Math.abs(l-  r) < 2 && isBalanced(root.left) && isBalanced(root.right);
     }
 
-    public int count(TreeNode t, int count) {
-        if (t == null) return count;
-        count = 1 + Math.max(count(t.left, count), count(t.right, count));
-        return count;
+    public int count(TreeNode t) {
+        if (t == null) return 0;
+        return 1 + Math.max(count(t.left), count(t.right));
     }
 }
