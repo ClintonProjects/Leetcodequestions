@@ -17,7 +17,9 @@ class Solution {
 
     public boolean isBalanced(TreeNode root) {
         if (root == null) return true;
-        return Math.abs(count(root.left, 1) -  count(root.right, 1)) < 2 && isBalanced(root.left) && isBalanced(root.right);
+        int l = count(root.left, 1);
+        int r =  count(root.right, 1);
+        return Math.abs(l-  r) < 2 && isBalanced(root.left) && isBalanced(root.right);
     }
 
     public int count(TreeNode t, int count) {
