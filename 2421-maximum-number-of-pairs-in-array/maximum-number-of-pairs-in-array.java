@@ -6,14 +6,13 @@ class Solution {
         for (var i : nums)
             ls[i]++;
 
-        var distinct = 0;
-        var pairs = 0;
+        int[] r = new int[2];
 
         for (var i : ls) {
-            pairs += i / 2;
-            distinct += i % 2;
+            r[0] += i / 2;
+            r[1] += i % 2;
         }
 
-        return new int[] { pairs, distinct };
+        return r;
     }
 }
