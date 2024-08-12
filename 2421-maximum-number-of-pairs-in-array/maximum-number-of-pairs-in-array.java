@@ -1,19 +1,19 @@
 class Solution {
-    public int[] numberOfPairs(int[] nums) {
-        Arrays.sort(nums);
-        Stack<Integer> st = new Stack<Integer>();
-        int pairs = 0;
 
-        for (int i : nums) {
-            if (st.isEmpty() || st.peek() != i) {
-                st.push(i);
-            } else {
-                pairs++;
-                st.pop();
-            }
+    public int[] numberOfPairs(int[] nums) {
+        int[] ls = new int[101];
+
+        for (var i : nums)
+            ls[i]++;
+
+        var distinct = 0;
+        var pairs = 0;
+
+        for (var i : ls) {
+            pairs += i / 2;
+            distinct += i % 2;
         }
 
-
-        return new int[] {pairs, st.size()};
+        return new int[] { pairs, distinct };
     }
 }
