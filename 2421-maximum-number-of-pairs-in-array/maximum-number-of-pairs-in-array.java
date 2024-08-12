@@ -3,13 +3,13 @@ class Solution {
     public int[] numberOfPairs(int[] nums) {
         int[] ls = new int[101];
 
-        for (int i : nums)
+        for (var i : nums)
             ls[i]++;
 
-        int distinct = 0;
-        int pairs = 0;
+        var distinct = 0;
+        var pairs = 0;
 
-        for (int i : ls) {
+        for (var i : ls) {
             pairs += i / 2;
             distinct += i % 2;
         }
